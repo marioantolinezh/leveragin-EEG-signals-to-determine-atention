@@ -10,9 +10,19 @@ The program is composed of three independent files which put togeather form a co
     b.1) 'prueba_gui.py' has the GUI structure development
     b.2) 'real_time_plotter.py' has other data transfer rates which are yet to optimize
     
-    The goal of separating this files is having a better understand and performing an optimization of the resources.
+The goal of separating this files is having a better understand and performing an optimization of the resources.
 
 
 Progress Report:
-
+10/24
+	- I am able to separate the frequency bands and observe variations int he obtained voltage amplitude in certain frequency band due to an increment of activity 
+	- all this is done yet in one measurement with a sample frequency of 2000Hz 
+  
+  
+To do
+	- plot the original time signal with voltage measurements in the y axis (not simple steps) => see ADC range and error
+	- algorithm that analyses the morphology of the frequency wave and see when the amplitude is higher and with what rate it changess
+	- try other sampling rates and compare acccuracy
+	- implement this in github
+	- translate all the program to a continuous time plotting + GUI that shows increment rate of attention (amplitude of the signal in the alpha waveband)
   
