@@ -11,3 +11,8 @@ The program is composed of three independent files which put togeather form a co
     b.2) 'real_time_plotter.py' has other data transfer rates which are yet to optimize
     
     The goal of separating this files is having a better understand and performing an optimization of the resources.
+
+
+Progress Report:
+
+  
