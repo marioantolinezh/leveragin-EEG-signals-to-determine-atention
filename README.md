@@ -29,3 +29,6 @@ To do
 
 11/10
 	-With a confirmed sampling frequency of 0.11 seconds, I am able to compute the Fourier Transform of 200 samples, convolve the signal with the pass band filter (f1 = 8Hz and f2 = 1)
+	
+To do:
+	-error handling ()
