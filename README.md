@@ -15,13 +15,13 @@ The goal of separating this files is having a better understand and performing a
 
 Progress Report:
 10/24
-	- I am able to separate the frequency bands and observe variations int he obtained voltage amplitude in certain frequency band due to an increment of activity 
+	- I am able to separate the frequency bands and observe variations int he obtained voltage amplitude in certain 		frequency band due to an increment of activity 
 	- all this is done yet in one measurement with a sample frequency of 2000Hz 
   
   
 To do
 	- plot the original time signal with voltage measurements in the y axis (not simple steps) => see ADC range and error
-	- algorithm that analyses the morphology of the frequency wave and see when the amplitude is higher and with what rate it changess
+	- algorithm that analyses the morphology of the frequency wave and see when the amplitude is higher and with what rate 		it changess
 	- try other sampling rates and compare acccuracy
 	- implement this in github
 	- translate all the program to a continuous time plotting + GUI that shows increment rate of attention (amplitude of the signal in the alpha waveband)
@@ -33,3 +33,12 @@ To do
 To do:
 	-error handling ()
 	-optimise code by using functions in repetitive activities
+	
+11/11
+	- After computing frequency automatically for the 200 samples, I noticed the sampling frequency is about 10 Hz. This means a problem for the passband filter since the fir raises an error: "Invalid cutoff frequency: frequencies must be greater than 0 and less than fs/2."
+	To solve this error, we are goint to take previously into account the last execution program avg_frequency (for not and making it simple I will assume previous avg_period was 0.1 seconds). For the upper passband cutoff frequency to be < fs/2, f_cutoff_2 must be < 0.1/2, this is, < 0.05. As we want an upper passband cutoff frequency of 8Hz (for the alpha waveband), we nedd a f_cutoff_2 < 9, this means 9 = fs/2, and this means fs = (must be) 18. For this goal, avg_period must be equal to 1/fs, that is, 1.8 seconds.
+	
+To do:
+	-error handling ()
+	-optimise code by using functions in repetitive activities
+	-take into account previous program frequency
