@@ -26,3 +26,6 @@ To do
 	- implement this in github
 	- translate all the program to a continuous time plotting + GUI that shows increment rate of attention (amplitude of the signal in the alpha waveband)
   
+
+11/10
+	-With a confirmed sampling frequency of 0.11 seconds, I am able to compute the Fourier Transform of 200 samples, convolve the signal with the pass band filter (f1 = 8Hz and f2 = 1)
