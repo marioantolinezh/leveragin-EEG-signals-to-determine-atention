@@ -32,3 +32,4 @@ To do
 	
 To do:
 	-error handling ()
+	-optimise code by using functions in repetitive activities
