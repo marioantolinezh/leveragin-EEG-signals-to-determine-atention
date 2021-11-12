@@ -43,3 +43,17 @@ To do:
 	-error handling ()
 	-optimise code by using functions in repetitive activities
 	-take into account previous program frequency
+	
+	
+	
+11/12
+	- https://blog.wildan.us/2017/11/03/arduino-fast-er-sampling-rate/ gave me the solution to my problem! I was blocked bc I could not find a way to increase the sampling rate bc I thought the clk PSC (main pre-scaler) was by default at its minimum value, but is apparently 125. So the original microprocessor ATmega328P main clk has a speed of 16MHz, and is actually working at 16MHz/PSC= 8MHz. The prescaled ADC was working at 125KHz (since each conversion takes 13 clk cicles). 
+	- However, by changing the PSC value to its minimum, this is, PSC = 2, we would achieve the highest theoretical sampling rate of 615KHz. Actually, prescale values below 16 are not recommended because the ADC clock is rated. Anyway, the PSC configuration is actually not accessible in the Elegoo Uno R3 board so another option has to be considered. In the before mentioned source, the following is mentiond: 
+	
+	"So, in order to get the higher sampling rate of Arduino, we need to access the hardware by writing some value to the arduino register. We also need to avoid using ordinary analogRead() functions because that functions will ‘blocks’. Why is it? So, when we call analogRead(), it waits until the conversion is done. Any other process will not run until the conversion is done, which we know that the conversion itself also takes time. Solution ? INTERRUPTS!"
+
+	Then, and ISR can be used to achieve 76 KHz. The arduino code works and its integration with the main.py code works too although the number of samples read should be increased to have a representative meassurement. However, UnicodeDecodeError and ValueError exceptions come up when trying to get the data, there is something happening when opening the serial port in the arduino and closing it, that afterwards it just shows unicode strings that are not parsable or able to decode. 
+	
+To do:
+	-Yesterday's
+	-Higher adc data resolution (at least 19 bits would be needed) although a 16bits approximation would fit too (less accuracy). 
