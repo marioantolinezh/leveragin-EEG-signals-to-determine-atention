@@ -36,7 +36,7 @@ To do:
 	
 11/11
 	- After computing frequency automatically for the 200 samples, I noticed the sampling frequency is about 10 Hz. This means a problem for the passband filter since the fir raises an error: "Invalid cutoff frequency: frequencies must be greater than 0 and less than fs/2."
-	To solve this error, we are goint to take previously into account the last execution program avg_frequency (for not and making it simple I will assume previous avg_period was 0.1 seconds). For the upper passband cutoff frequency to be < fs/2, f_cutoff_2 must be < 0.1/2, this is, < 0.05. As we want an upper passband cutoff frequency of 8Hz (for the alpha waveband), we nedd a f_cutoff_2 < 9, this means 9 = fs/2, and this means fs = (must be) 18. For this goal, avg_period must be equal to 1/fs, that is, 1.8 seconds.
+	To solve this error, we are goint to take previously into account the last execution program avg_frequency (for not and making it simple I will assume previous avg_period was 0.098 seconds). For the upper passband cutoff frequency to be < fs/2, f_cutoff_2 must be < 10.1/2, this is, < 5.05. As we want an upper passband cutoff frequency of 8Hz (for the alpha waveband), we nedd a f_cutoff_2 < 8.1, this means 8.1 = fs/2, and this means fs = (must be) 16.2. For this goal, avg_period must be equal to 1/fs, that is, 61 milliseconds, while the actual sampling_period is 98ms. We need to achieve a higher sampling frequency by modifying Arduino's code. 
 	
 To do:
 	-error handling ()
