@@ -155,4 +155,4 @@ plot_button.pack()
 
 top.mainloop()
 
-#until figure is closed is not able to read...?
+
