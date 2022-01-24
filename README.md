@@ -57,3 +57,7 @@ To do:
 To do:
 	-Yesterday's
 	-Higher adc data resolution (at least 19 bits would be needed) although a 16bits approximation would fit too (less accuracy). 
+	
+15/12
+	-Integration was successfully done and aimed resolution fullfilled.
+	-Tests have been done confirming the algorithms accuracy-.
